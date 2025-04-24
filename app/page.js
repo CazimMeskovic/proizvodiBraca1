@@ -176,11 +176,11 @@ export const metadata = {
   openGraph: {
     title: "Mešan Auto Dijelovi – Brošura",
     description: "Saznajte sve o našim servisima i ponudi kroz detaljan vodič.",
-    url: "http://mesan.vercel.app/mesan1.png",
+    url: "https://mesan-autodijelovi.vercel.app/mesan1.png",
     siteName: "Mešan Auto Dijelovi",
     images: [
       {  
-        url: "http://mesan.vercel.app/mesan1.png",
+        url: "https://mesan-autodijelovi.vercel.app/mesan1.png",
         width: 1200,
         height: 630,
         alt: "Mešan Auto Dijelovi vodič"
@@ -192,7 +192,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mešan Auto Dijelovi – Vodič",
     description: "Preuzmite PDF i otkrijte našu ponudu servisnih paketa.",
-    images: ["http://mesan.vercel.app/mesan1.png"]
+    images: ["https://mesan-autodijelovi.vercel.app/mesan1.png"]
   }
 };
 

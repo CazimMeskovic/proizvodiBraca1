@@ -264,11 +264,11 @@ export default function ContactSection() {
           />
 
           {/* reCAPTCHA */}
-          <ReCAPTCHA
+        {/*   <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
             onChange={(token) => setCaptchaToken(token)}
             className="my-4"
-          />
+          /> */}
 
           {/* Submit Button */}
           <button
@@ -292,7 +292,7 @@ export default function ContactSection() {
         <div className="mt-12 text-center text-sm text-gray-300">
           <p>
             Email:{' '}
-            <a href="mailto:contact@earthmetaadvisor.com" className="underline text-yellow-500">
+            <a href="mailto:adism72@bih.net.ba" className="underline text-yellow-500">
             adism72@bih.net.ba
             </a>
           </p>
