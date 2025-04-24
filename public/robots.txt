@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.earthmeta-advisor.com
+
+# Sitemaps
+Sitemap: https://www.earthmeta-advisor.com/sitemap.xml
