@@ -147,7 +147,7 @@ export default function PrikazPage() {
           Naši Proizvodi
         </h2>
         <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto text-lg">
-          Istražite našu ponudu kvalitetnih proizvoda za vaše vozilo.
+          Istražite našu ponudu kvalitetnih proizvoda.
         </p>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">

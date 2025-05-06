@@ -168,10 +168,10 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaToken) {
+   /*  if (!captchaToken) {
       alert('Molimo vas da potvrditi da niste robot.');
       return;
-    }
+    } */
 
     setStatus('loading');
 
@@ -293,11 +293,11 @@ export default function ContactSection() {
           <p>
             Email:{' '}
             <a href="mailto:adism72@bih.net.ba" className="underline text-yellow-500">
-            adism72@bih.net.ba
+            meskovic0007@gmail.com
             </a>
           </p>
-          <p className="mt-2">Telefon: 037 306-177</p>
-          <p className="mt-2">Radno vrijeme: Pon-Pet, 9:00 - 17:00 CET</p>
+         {/*  <p className="mt-2">Telefon: 037 306-177</p> */}
+          <p className="mt-2">Radno vrijeme: Non-Stop</p>
         </div>
       </div>
     </section>

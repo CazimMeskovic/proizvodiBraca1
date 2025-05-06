@@ -170,29 +170,29 @@ export default function Home() {
 }
  */
 export const metadata = {
-  title: "Mešan Auto Dijelovi – Vodič kroz Servisne Pakete",
-  description: "Preuzmite naš vodič kako biste saznali više o servisnim paketima, uslugama i viziji kvalitete koju nudimo za vaše vozilo.",
-  keywords: ["auto dijelovi", "auto servis", "vodič", "Mešan Auto", "auto mehaničar Bihać"],
+  title: "Braća Muslimani – Platforma za Promociju Proizvoda i Usluga",
+  description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte svoje proizvode i širite svoju ponudu u muslimanskoj zajednici.",
+  keywords: ["muslimani", "proizvodi", "usluge", "promocija", "muslimanska zajednica"],
   openGraph: {
-    title: "Mešan Auto Dijelovi – Brošura",
-    description: "Saznajte sve o našim servisima i ponudi kroz detaljan vodič.",
-    url: "https://mesan-autodijelovi.vercel.app/mesan1.png",
-    siteName: "Mešan Auto Dijelovi",
+    title: "Braća Muslimani – Platforma za Promociju",
+    description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
+    url: "https://www.bracamuslimani.com",
+    siteName: "Braća Muslimani",
     images: [
-      {  
-        url: "https://mesan-autodijelovi.vercel.app/mesan1.png",
+      {
+        url: "https://www.bracamuslimani.com/images/vodic-preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Mešan Auto Dijelovi vodič"
+        alt: "Braća Muslimani platforma"
       }
     ],
     type: "article"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mešan Auto Dijelovi – Vodič",
-    description: "Preuzmite PDF i otkrijte našu ponudu servisnih paketa.",
-    images: ["https://mesan-autodijelovi.vercel.app/mesan1.png"]
+    title: "Braća Muslimani – Platforma za Promociju",
+    description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte ih i širimo zajednicu.",
+    images: ["https://www.bracamuslimani.com/images/vodic-preview.jpg"]
   }
 };
 

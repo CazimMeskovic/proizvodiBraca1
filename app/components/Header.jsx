@@ -222,8 +222,8 @@ import logo from "../images/mesan1.png"
 
 const navLinks = [
   { href: '/', label: 'Početna' },
-  { href: '/packages', label: 'Paketi' },
-  { href: '/use-cases', label: 'Upotreba' },
+  { href: '/prikaz', label: 'Proizvodi' },
+  { href: '/dodaj', label: 'Dodaj' },
   { href: '/whitepaper', label: 'Gdje smo' },
   { href: '/contact', label: 'Kontakt' },
 ];
@@ -262,14 +262,14 @@ export default function Header() {
             href="/"
             className="text-2xl font-bold tracking-wider uppercase text-cyan-400 hover:text-white transition duration-300"
           >
-  <Image
+ {/*  <Image
     src={logo}
     alt="Metaverse City"
     width={70}
     height={20}
     className="object-contain rounded-lg"
     priority
-  />
+  /> */}Bratski Proizvodi
 </Link>
           
         </motion.div>

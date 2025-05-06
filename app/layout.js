@@ -31,29 +31,30 @@ import './globals.css';
 
 
 export const metadata = {
-  title: 'Moja stranica',
-  description: 'Ovo je opis moje stranice.',
+  title: "Braća Muslimani – Platforma za Promociju Proizvoda i Usluga",
+  description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte svoje proizvode i širite svoju ponudu u muslimanskoj zajednici.",
+  keywords: ["muslimani", "proizvodi", "usluge", "promocija", "muslimanska zajednica"],
   openGraph: {
-    title: 'Moja stranica',
-    description: 'Opis koji će biti prikazan kad neko dijeli sajt.',
-    url: 'https://moj-sajt.com',
-    siteName: 'MojaStranica',
+    title: "Braća Muslimani – Platforma za Promociju",
+    description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
+    url: "https://www.bracamuslimani.com",
+    siteName: "Braća Muslimani",
     images: [
       {
-        url: 'https://d4n0y8dshd77z.cloudfront.net/listings/19671932/lg/TOvgkv7Yi74qbwcmhL0p.jpg',
+        url: "https://www.bracamuslimani.com/images/vodic-preview.jpg",
         width: 1200,
         height: 630,
-        alt: 'Moja meta slika',
-      },
+        alt: "Braća Muslimani platforma"
+      }
     ],
-    type: 'website',
+    type: "article"
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Moja stranica',
-    description: 'Opis za Twitter karticu',
-    images: ['https://d4n0y8dshd77z.cloudfront.net/listings/19671932/lg/TOvgkv7Yi74qbwcmhL0p.jpg'],
-  },
+    card: "summary_large_image",
+    title: "Braća Muslimani – Platforma za Promociju",
+    description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte ih i širimo zajednicu.",
+    images: ["https://www.bracamuslimani.com/images/vodic-preview.jpg"]
+  }
 };
 export default function RootLayout({ children }) {
   return (
