@@ -18,12 +18,13 @@ export default function Footer() {
         {/* Created by */}
         <div className="w-full flex justify-center">
           <a
-            href="https://cazim.vercel.app/"
+            href="https://imajwebsajt.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-white transition text-sm"
           >
-            Created by Mesko development
+            Created by Mesko development  
+         
           </a>
         </div>
       </div>
