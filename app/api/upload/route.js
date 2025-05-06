@@ -65,7 +65,7 @@ export async function POST(req) {
 
     console.log('✅ Podatak upisan u bazu');
 
-    return NextResponse.json({ message: 'Proizvod uspješno dodan!', imageUrl });
+    return NextResponse.json({ message: 'Proizvod uspješno dodan! i bit ce vidljiv za 10 min', imageUrl });
 
   } catch (err) {
     console.error('❗ Server error:', err);
