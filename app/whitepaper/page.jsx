@@ -287,7 +287,7 @@ export const metadata = {
 
 export default function WhitepaperSection() {
   return (
-    <section className="min-h-screen bg-gray-950 text-white py-16 px-4 sm:px-6 lg:px-12">
+    <section className="min-h-screen bg-gray-950 text-white py-16  px-4 sm:px-6 lg:px-12">
       <div className="max-w-6xl mx-auto space-y-16">
 
         {/* Naslov i opis */}
