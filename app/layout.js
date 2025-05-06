@@ -41,7 +41,7 @@ export const metadata = {
     siteName: "Braća Muslimani",
     images: [
       {
-        url: "https://www.bratski-proizvodi.vercel.app/images/muslim.jpg",
+        url: "https://www.bratski-proizvodi.vercel.app/musliman.jpg",
         width: 1200,
         height: 630,
         alt: "Braća Muslimani platforma"

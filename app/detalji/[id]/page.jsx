@@ -82,7 +82,7 @@ export default function DetaljiPage() {
           <img
             src={product.image_url}
             alt={product.title}
-            className="w-full h-80 object-cover rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-500"
+            className="w-full h-80 object-cover object-center rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-500"
           />
          {/*  <div className="absolute top-4 left-4 bg-black bg-opacity-60 text-white p-6 rounded-xl">
             <h1 className="text-4xl font-extrabold tracking-wide">{product.title}</h1>
