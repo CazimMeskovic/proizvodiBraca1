@@ -45,6 +45,8 @@ export default function DetaljiPage() {
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import FuturisticLoader from '@/app/components/FuturisticLoader';
+
 
 export default function DetaljiPage() {
   const { id } = useParams();
@@ -67,7 +69,9 @@ export default function DetaljiPage() {
   }, [id]);
 
   if (errorMsg) return <p className="text-red-500 p-4">{errorMsg}</p>;
-  if (!product) return <p className="text-white p-4">Učitavanje...</p>;
+ /*  if (!product) return <p className="text-white p-4">Učitavanje...</p>; */
+ if (!product && !errorMsg) return <FuturisticLoader />;
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 to-blue-900 text-white pt-24 p-8">

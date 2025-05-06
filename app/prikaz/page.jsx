@@ -114,6 +114,8 @@ export default function PrikazPage() {
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import FuturisticLoader from '../components/FuturisticLoader';
+
 
 export default function PrikazPage() {
   const [products, setProducts] = useState([]);
@@ -137,7 +139,9 @@ export default function PrikazPage() {
     fetchProducts();
   }, []);
 
-  if (loading) return <p className="text-white p-4">Učitavanje...</p>;
+ /*  if (loading) return <p className="text-white p-4">Učitavanje...</p>; */
+ if (loading) return <FuturisticLoader />;
+
   if (errorMsg) return <p className="text-red-400 p-4">{errorMsg}</p>;
 
   return (

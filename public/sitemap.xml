@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.earthmeta-advisor.com/checkout</loc><lastmod>2025-04-24T09:43:04.109Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/how-it-works</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/package-detail</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/packages</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/thank-you</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/use-cases</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/contact</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.earthmeta-advisor.com/whitepaper</loc><lastmod>2025-04-24T09:43:04.111Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/api/products</loc><lastmod>2025-05-06T10:50:53.281Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/dodaj</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/how-it-works</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/package-detail</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/checkout</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/packages</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/prikaz</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/thank-you</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/whitepaper</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/contact</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.earthmeta-advisor.com/use-cases</loc><lastmod>2025-05-06T10:50:53.283Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
