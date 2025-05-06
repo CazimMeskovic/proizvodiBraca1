@@ -37,11 +37,11 @@ export const metadata = {
   openGraph: {
     title: "Braća Muslimani – Platforma za Promociju",
     description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
-    url: "https://www.bracamuslimani.com",
+    url: "https://www.bratski-proizvodi.vercel.app",
     siteName: "Braća Muslimani",
     images: [
       {
-        url: "https://www.bracamuslimani.com/images/vodic-preview.jpg",
+        url: "https://www.bratski-proizvodi.vercel.app/images/muslim.jpg",
         width: 1200,
         height: 630,
         alt: "Braća Muslimani platforma"
@@ -53,7 +53,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Braća Muslimani – Platforma za Promociju",
     description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte ih i širimo zajednicu.",
-    images: ["https://www.bracamuslimani.com/images/vodic-preview.jpg"]
+    images: ["https://www.bratski-proizvodi.vercel.app/images/muslim.jpg"]
   }
 };
 export default function RootLayout({ children }) {
