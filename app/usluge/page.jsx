@@ -6,7 +6,7 @@ import Image from 'next/image';
 import FuturisticLoader from '../components/FuturisticLoader';
 
 
-export default function PrikazPage() {
+export default function UslugePage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('');
@@ -44,7 +44,7 @@ export default function PrikazPage() {
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <Link key={product.id} href={`/detalji/${product.id}`}>
+            <Link key={product.id} href={`/detaljiUsluge/${product.id}`}>
               <div className="bg-[#1e293b] rounded-2xl shadow-lg hover:shadow-cyan-500/20 hover:ring-1 hover:ring-cyan-400/30 transition duration-300 overflow-hidden cursor-pointer">
                 <div className="flex justify-center items-center p-4">
                  {/*  <Image
