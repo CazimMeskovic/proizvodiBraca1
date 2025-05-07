@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import FuturisticLoader from '../components/FuturisticLoader';
 
 export default function ObjaviPage() {
   const [loading, setLoading] = useState(false);
@@ -34,9 +35,16 @@ export default function ObjaviPage() {
           Objavi Poklanjam
         </button>
       </div>
+     {/*  {loading && (
+         <div className="mt-4 text-yellow-400">Preusmeravanje...</div>
+      
+      )} */}
       {loading && (
-        <div className="mt-4 text-yellow-400">Preusmeravanje...</div>
-      )}
+  <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center">
+    <FuturisticLoader />
+  </div>
+)}
+
     </div>
   );
 }
