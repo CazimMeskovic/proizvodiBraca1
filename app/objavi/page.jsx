@@ -40,7 +40,7 @@ export default function ObjaviPage() {
       
       )} */}
       {loading && (
-  <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center">
+  <div className="fixed inset-0 bg-black  z-50 flex items-center justify-center">
     <FuturisticLoader />
   </div>
 )}
