@@ -1,11 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-      domains: ['esbunpblkylfizssxhyz.supabase.co'], // Dodaj ovde svoj domen
-    },
-  };
-  
-  export default nextConfig;
-  
+export default {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'esbunpblkylfizssxhyz.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
+};
+
 
 
