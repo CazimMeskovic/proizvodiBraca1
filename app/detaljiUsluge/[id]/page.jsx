@@ -94,10 +94,10 @@ export default function DetaljiPage() {
           <h2 className="text-2xl font-bold text-gray-300">{product.title}</h2>
         </div> */}
          <div className= "text-center bg-black bg-opacity-60 text-white p-6 rounded-xl">
-            <h1 className="text-4xl font-extrabold tracking-wide">{product.title}</h1>
+            <h1 className=" sm:text-4xl text-xl  font-extrabold tracking-wide">{product.title}</h1>
           </div>
           <div className= " bg-[#652375] bg-opacity-60 text-orange-400 p-6 rounded-xl">
-            <h1 className="text-4xl font-extrabold tracking-wide">{product.grad}</h1>
+            <h1 className=" sm:text-4xl text-xl font-extrabold tracking-wide">{product.grad}</h1>
           </div>
 
         {/* Product description */}

@@ -76,6 +76,7 @@ export default function UslugePage() {
                     className="text-gray-300 text-sm leading-relaxed line-clamp-3"
                     title={product.description}
                   >
+                    <p className="text-gray-400 text-sm mt-2">Grad: {product.grad}</p>
                     {product.description}
                   </p>
                 </div>
