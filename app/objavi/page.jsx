@@ -28,7 +28,7 @@ export default function ObjaviPage() {
           Objavi Uslugu
         </button>
         <button
-          onClick={() => handleRedirect('/poklanjam')}
+          onClick={() => handleRedirect('/dodajPoklanjam')}
           className="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-xl font-semibold w-full sm:w-auto"
         >
           Objavi Poklanjam
