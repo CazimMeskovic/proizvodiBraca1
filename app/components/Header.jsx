@@ -226,7 +226,7 @@ const navLinks = [
   { href: '/usluge', label: 'Usluge' },
   { href: '/poklanjam', label: 'Poklanjam' },
   { href: '/objavi', label: 'Objavi' },
-  { href: '/whitepaper', label: 'Gdje smo' },
+ /*  { href: '/whitepaper', label: 'Gdje smo' }, */
   { href: '/contact', label: 'Kontakt' },
 ];
 /* const navLinks = [
