@@ -8,15 +8,15 @@ const supabase = createClient(
 
 export async function POST(req) {
   try {
-    console.log('➡️ API upload ruta pozvana');
+    console.log('➡️ API upload ruta poklanjamUpload pozvana');
 
     const formData = await req.formData();
     const title = formData.get('title');
     const description = formData.get('description');
-    const grad = formData.get('grad');
     const image = formData.get('image');
+    const grad = formData.get('grad');  // Novo polje grad
 
-    console.log('📦 Podaci iz forme:', { title, description, grad, image });
+    console.log('📦 Podaci iz forme:', { title, description, image, grad });
 
     if (!image) {
       return NextResponse.json({ error: 'Nema slike' }, { status: 400 });
@@ -29,7 +29,7 @@ export async function POST(req) {
     console.log('📤 Upload slike na Supabase Storage:', fileName);
 
     const { data: imageData, error: uploadError } = await supabase.storage
-      .from('usluge-images')
+      .from('poklanjam-buket')
       .upload(fileName, buffer, {
         contentType: image.type,
         cacheControl: '3600',
@@ -42,7 +42,7 @@ export async function POST(req) {
     }
 
     const { data: publicUrlData } = supabase.storage
-      .from('usluge-images')
+      .from('poklanjam-buket')
       .getPublicUrl(fileName);
 
     const imageUrl = publicUrlData.publicUrl;
@@ -50,13 +50,13 @@ export async function POST(req) {
     console.log('✅ Slika uploadovana. Javna adresa:', imageUrl);
 
     const { error: dbError } = await supabase
-      .from('usluge-images')
+      .from('poklanjam')
       .insert([
         {
           title,
           description,
-          grad,
           image_url: imageUrl,
+          city,  // Dodavanje grada u bazu
         },
       ]);
 
@@ -67,7 +67,7 @@ export async function POST(req) {
 
     console.log('✅ Podatak upisan u bazu');
 
-    return NextResponse.json({ message: 'Usluga uspješno dodana!, i bit ce vidljiv za 10 min', imageUrl });
+    return NextResponse.json({ message: 'Proizvod uspješno dodan i bit ce vidljiv za 10 min', imageUrl });
 
   } catch (err) {
     console.error('❗ Server error:', err);
@@ -86,15 +86,15 @@ const supabase = createClient(
 
 export async function POST(req) {
   try {
-    console.log('➡️ API upload ruta pozvana');
+    console.log('➡️ API ruta poklanjam pozvana');
 
     const formData = await req.formData();
     const title = formData.get('title');
     const description = formData.get('description');
-    const grad = formData.get('grad');
     const image = formData.get('image');
+    const grad = formData.get('grad');  // Polje grad
 
-    console.log('📦 Podaci iz forme:', { title, description, grad, image });
+    console.log('📦 Podaci iz forme:', { title, description, image, grad });
 
     if (!image) {
       return NextResponse.json({ error: 'Nema slike' }, { status: 400 });
@@ -107,7 +107,7 @@ export async function POST(req) {
     console.log('📤 Upload slike na Supabase Storage:', fileName);
 
     const { data: imageData, error: uploadError } = await supabase.storage
-      .from('usluge-images')
+      .from('product-images')  // Korišćenje odgovarajućeg bucket-a
       .upload(fileName, buffer, {
         contentType: image.type,
         cacheControl: '3600',
@@ -120,22 +120,22 @@ export async function POST(req) {
     }
 
     const { data: publicUrlData } = supabase.storage
-      .from('usluge-images')
+      .from('product-images')
       .getPublicUrl(fileName);
 
     const imageUrl = publicUrlData.publicUrl;
 
     console.log('✅ Slika uploadovana. Javna adresa:', imageUrl);
 
-    // ✅ Ispravljeno ime tabele ovdje
+    // Upisivanje u odgovarajuću tabelu 'poklanjam'
     const { error: dbError } = await supabase
-      .from('usluge')
+      .from('usluge')  // Tabela poklanjam
       .insert([
         {
           title,
           description,
-          grad,
           image_url: imageUrl,
+          grad,  // Dodavanje grada u bazu
         },
       ]);
 
@@ -146,7 +146,7 @@ export async function POST(req) {
 
     console.log('✅ Podatak upisan u bazu');
 
-    return NextResponse.json({ message: 'Usluga uspješno dodana!, i bit ce vidljiv za 10 min', imageUrl });
+    return NextResponse.json({ message: 'Proizvod uspješno dodan i bit će vidljiv za 10 min', imageUrl });
 
   } catch (err) {
     console.error('❗ Server error:', err);

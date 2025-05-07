@@ -107,7 +107,7 @@ export async function POST(req) {
     console.log('📤 Upload slike na Supabase Storage:', fileName);
 
     const { data: imageData, error: uploadError } = await supabase.storage
-      .from('poklanjam-buket')  // Korišćenje odgovarajućeg bucket-a
+      .from('product-images')  // Korišćenje odgovarajućeg bucket-a
       .upload(fileName, buffer, {
         contentType: image.type,
         cacheControl: '3600',
@@ -120,7 +120,7 @@ export async function POST(req) {
     }
 
     const { data: publicUrlData } = supabase.storage
-      .from('poklanjam-buket')
+      .from('product-images')
       .getPublicUrl(fileName);
 
     const imageUrl = publicUrlData.publicUrl;
