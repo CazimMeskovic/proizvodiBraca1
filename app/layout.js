@@ -31,11 +31,11 @@ import './globals.css';
 
 
 export const metadata = {
-  title: "Braća Muslimani – Platforma za Promociju Proizvoda i Usluga",
+  title: "Ahi – Platforma za Promociju Proizvoda i Usluga",
   description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte svoje proizvode i širite svoju ponudu u muslimanskoj zajednici.",
   keywords: ["muslimani", "proizvodi", "usluge", "promocija", "muslimanska zajednica"],
   openGraph: {
-    title: "Braća Muslimani – Platforma za Promociju",
+    title: "Ahi – Platforma za Promociju",
     description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
     url: "https://www.bratski-proizvodi.vercel.app",
     siteName: "Braća Muslimani",
@@ -44,7 +44,7 @@ export const metadata = {
         url: "https://www.bratski-proizvodi.vercel.app/musliman.jpg",
         width: 1200,
         height: 630,
-        alt: "Braća Muslimani platforma"
+        alt: "Ahi platforma"
       }
     ],
     type: "article"
