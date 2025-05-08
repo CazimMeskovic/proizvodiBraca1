@@ -124,7 +124,7 @@ export default function DodajPage() {
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const handleImageChange = async (e) => {
+  /* const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
@@ -141,7 +141,32 @@ export default function DodajPage() {
       console.error('Greška pri kompresiji:', err);
       setErrorMsg('Greška pri kompresiji slike.');
     }
+  }; */
+  const handleImageChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+  
+    if (file.size > 2 * 1024 * 1024) {
+      alert("Prevelika slika – maksimalna dozvoljena veličina je 2MB. Molimo uradite scrensorckut te slike i njega stavite.");
+      e.target.value = ''; // resetuje input
+      return;
+    }
+  
+    const options = {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 1280,
+      useWebWorker: true,
+    };
+  
+    try {
+      const compressedFile = await imageCompression(file, options);
+      setImage(compressedFile);
+    } catch (err) {
+      console.error('Greška pri kompresiji:', err);
+      setErrorMsg('Greška pri kompresiji slike.');
+    }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
