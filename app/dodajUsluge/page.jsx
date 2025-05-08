@@ -240,7 +240,7 @@ export default function DodajPage() {
 
     // Provjera veličine slike (preko 2MB)
     if (file.size > 2 * 1024 * 1024) {
-      alert("Prevelika slika – maksimalna dozvoljena veličina je 2MB.");
+      alert("Prevelika slika – maksimalna dozvoljena veličina je 2MB. Molimo uradite scrensorckut te slike i njega stavite.");
       e.target.value = ''; // Resetuje input
       return;
     }
