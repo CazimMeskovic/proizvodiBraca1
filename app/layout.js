@@ -37,11 +37,11 @@ export const metadata = {
   openGraph: {
     title: "Ahi – Platforma za Promociju",
     description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
-    url: "https://www.bratski-proizvodi.vercel.app",
+    url: "https://www.ahi-proizvodi.vercel.app",
     siteName: "Braća Muslimani",
     images: [
       {
-        url: "https://www.bratski-proizvodi.vercel.app/musliman.jpg",
+        url: "https://www.ahi-proizvodi.vercel.app/musliman.jpg",
         width: 1200,
         height: 630,
         alt: "Ahi platforma"
