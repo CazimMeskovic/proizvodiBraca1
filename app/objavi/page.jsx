@@ -1,7 +1,29 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import FuturisticLoader from '../components/FuturisticLoader';
+/* import FuturisticLoader from '../components/FuturisticLoader'; */
+
+
+// Loader komponenta
+function FuturisticLoader1() {
+  return (
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="flex space-x-4">
+        {[...Array(3)].map((_, i) => (
+          <span
+            key={i}
+            className="w-6 h-6 rounded-full bg-cyan-400 animate-ping"
+            style={{ animationDelay: `${i * 0.2}s` }}
+          />
+        ))}
+      </div>
+      <p className="absolute bottom-10 text-cyan-300 text-lg tracking-widest animate-pulse">
+        Učitavanje...
+      </p>
+    </div>
+  );
+}
+
 
 export default function ObjaviPage() {
   const [loading, setLoading] = useState(false);
@@ -35,13 +57,10 @@ export default function ObjaviPage() {
           Objavi Poklanjam
         </button>
       </div>
-     {/*  {loading && (
-         <div className="mt-4 text-yellow-400">Preusmeravanje...</div>
-      
-      )} */}
+    
       {loading && (
-  <div className="fixed inset-0 bg-black  z-50 flex items-center justify-center">
-    <FuturisticLoader />
+  <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <FuturisticLoader1 />
   </div>
 )}
 
