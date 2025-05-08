@@ -6,6 +6,8 @@ import Image from 'next/image';
 import FuturisticLoader from '../components/FuturisticLoader';
 
 
+export const revalidate = 10
+
 export default function UslugePage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

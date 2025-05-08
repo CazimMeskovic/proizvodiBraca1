@@ -56,7 +56,7 @@ export default function HomePage() {
         >
           <h2 className="text-4xl font-bold text-blue-400 mb-4">Ko smo mi?</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Braća Muslimani je platforma koja povezuje muslimane koji žele promovirati i prodavati svoje proizvode i usluge unutar zajednice. Naša misija je pružiti prostor za rast i razvoj, gdje zajednica može međusobno pomoći i podržavati se.
+            Braća Muslimani je platforma koja povezuje muslimane koji žele promovirati i prodavati svoje proizvode i usluge unutar zajednice.Prodajimo, kupujmo i poklanjajmo jedni drugima i od drugih te na taj način osnazimo nasu zajednicu. Naša misija je pružiti prostor za rast i razvoj, gdje zajednica može međusobno pomoći i podržavati se.
           </p>
         </motion.div>
       </section>
@@ -91,12 +91,12 @@ export default function HomePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12 text-purple-400">Kategorije Proizvoda</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-purple-400">Naše kategorije</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[ 
-              { name: "Proizvodi za Dom", desc: "Namještaj, aparati, dekoracija i sve što vam treba za vaš dom." },
-              { name: "Tehnička Oprema", desc: "Elektronika, alati, i ostala oprema za kućne i poslovne potrebe." },
-              { name: "Usuge za Poslovanje", desc: "Različite vrste usluga, od transporta do održavanja." },
+              { name: "Proizvodi ", desc: "Razni proizvodi: Namještaj, aparati, dekoracija i sve što vam treba za vaš dom." },
+              { name: "Usluge", desc: "Razne usluge: Web okruzenje, Građevina, Automehaničarske i druge usluge" },
+              { name: "Pokloni", desc: "Ako ne želite nešto prodati nego želite da to poklonite nekom bratu ili sestri muslimanki možete to uraditi u rubrici Pokloni." },
             ].map(({ name, desc }, idx) => (
               <div key={idx} className="bg-gray-900 p-6 rounded-xl text-center transform hover:scale-105 hover:border hover:border-blue-500 transition-all duration-300">
                 <h3 className="text-xl font-semibold text-blue-300 mb-2">{name}</h3>
@@ -143,7 +143,7 @@ export default function HomePage() {
         >
           <h2 className="text-4xl font-bold mb-4 text-purple-400">Zainteresovani za saradnju?</h2>
           <p className="text-lg text-gray-300 mb-6">
-            Kontaktirajte nas i otkrijte kako možemo unaprijediti vaše poslovanje kroz našu platformu.
+            Podržite našu zajedničku platformu, ukoliko imate dodatnih pitanja uvijek nas možete kontaktirati.
           </p>
           <a href="/contact" className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg">Kontaktiraj nas</a>
         </motion.div>
