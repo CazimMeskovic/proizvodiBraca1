@@ -124,24 +124,7 @@ export default function DodajPage() {
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  /* const handleImageChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
 
-    const options = {
-      maxSizeMB: 1,
-      maxWidthOrHeight: 1280,
-      useWebWorker: true,
-    };
-
-    try {
-      const compressedFile = await imageCompression(file, options);
-      setImage(compressedFile);
-    } catch (err) {
-      console.error('Greška pri kompresiji:', err);
-      setErrorMsg('Greška pri kompresiji slike.');
-    }
-  }; */
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
