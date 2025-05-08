@@ -114,12 +114,28 @@ export default function ClientProducts({ products }) {
                     className="rounded-xl object-cover object-center shadow-md w-full h-[200px]"
                   />
                 </div>
-                <div className="p-6 space-y-3">
+               {/*  <div className="p-6 space-y-3">
                   <h3 className="text-xl font-semibold text-white">{product.title}</h3>
                   <p className="text-gray-300 text-sm leading-relaxed line-clamp-3" title={product.description}>
                     {product.description}
                   </p>
-                </div>
+                </div> */}
+                <div className="p-6 space-y-3">
+  <h3 className="text-xl font-semibold text-white">{product.title}</h3>
+  {product.grad && (
+    <p className="text-cyan-400 text-xs font-medium mt-2">
+     Grad: {product.grad}
+    </p>
+  )}
+  <p
+    className="text-gray-300 text-sm leading-relaxed line-clamp-3"
+    title={product.description}
+  >
+    {product.description}
+  </p>
+  
+</div>
+
               </div>
             </Link>
           ))}
