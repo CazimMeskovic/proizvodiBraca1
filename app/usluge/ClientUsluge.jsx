@@ -1,4 +1,5 @@
-/* 
+// app/usluge/ClientUsluge.tsx
+
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -6,35 +7,20 @@ import Image from 'next/image';
 import FuturisticLoader from '../components/FuturisticLoader';
 
 
-export const revalidate = 10
-
-export default function UslugePage() {
-  const [products, setProducts] = useState([]);
+export default function ClientUsluge({ products }) {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch('/api/usluge');
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Greška pri dohvatu proizvoda');
-        setProducts(data);
-      } catch (err) {
-        setErrorMsg(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
+    setLoading(false);
   }, []);
 
- if (loading) return <FuturisticLoader />;
+  if (loading) return <p>Loading...</p>;
 
-  if (errorMsg) return <p className="text-red-400 p-4">{errorMsg}</p>;
+  if (errorMsg) return <p>{errorMsg}</p>;
 
   return (
+   <>
     <section className="bg-[#0f172a] py-20 border-t border-cyan-400/10 min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-white mb-4 tracking-tight">
@@ -82,29 +68,7 @@ export default function UslugePage() {
         </div>
       </div>
     </section>
-  );
-}
- 
-
-
- */
-
-// app/usluge/page.tsx
-import { getProducts } from './ServerUsluge';
-import ClientUsluge from './ClientUsluge';
-
-export const revalidate = 10;
-
-export default async function UslugePage() {
-  const products = await getProducts();
-
-  return (
-    <section >
-      
-
-        {/* Prikazuj podatke putem klijentske komponente */}
-        <ClientUsluge products={products} />
-    
-    </section>
+   
+   </>
   );
 }
