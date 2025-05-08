@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 
 export const metadata = {
-  title: "Braća Muslimani – Platforma za Promociju Proizvoda i Usluga",
+  title: "Ahi Platforma za Promociju Proizvoda i Usluga",
   description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte svoje proizvode i širite svoju ponudu u muslimanskoj zajednici.",
   keywords: ["muslimani", "proizvodi", "usluge", "promocija", "muslimanska zajednica"],
   openGraph: {
-    title: "Braća Muslimani – Platforma za Promociju",
+    title: "Ahi – Platforma za Promociju",
     description: "Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom i pouzdanoj mreži.",
     url: "https://www.bratski-proizvodi.vercel.app",
     siteName: "Braća Muslimani",
@@ -15,7 +15,7 @@ export const metadata = {
         url: "https://www.bratski-proizvodi.vercel.app/images/muslim.jpg",
         width: 1200,
         height: 630,
-        alt: "Braća Muslimani platforma"
+        alt: "Ahi Muslimani platforma"
       }
     ],
     type: "article"
@@ -40,7 +40,7 @@ export default function HomePage() {
           transition={{ duration: 1 }}
           className="relative z-10 max-w-3xl"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Braća Muslimani  Platforma za Promociju</h1>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Ahi Platforma za Promociju</h1>
           <p className="text-lg md:text-xl mb-6 text-gray-300">Povežite se sa zajednicom i promovirajte svoje proizvode i usluge u sigurnom okruženju.</p>
           <a href="#about" className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:scale-105 transition-all duration-300">Saznaj više</a>
         </motion.div>

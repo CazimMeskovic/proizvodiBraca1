@@ -271,7 +271,7 @@ export default function Header() {
     height={20}
     className="object-contain rounded-lg"
     priority
-  /> */}Bratski Proizvodi
+  /> */}Ahi Proizvodi
 </Link>
           
         </motion.div>
