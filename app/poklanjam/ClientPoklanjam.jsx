@@ -1,56 +1,39 @@
-// app/usluge/ClientUsluge.tsx
-
+// app/poklanjam/ClientPoklanjam.tsx
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FuturisticLoader from '../components/FuturisticLoader';
 
-
-export default function ClientUsluge({ products }) {
-  const [loading, setLoading] = useState(true);
+export default function ClientPoklanjam({ products }) {
+  const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
- /*  if (loading) return <p>Loading...</p>; */
   if (loading) return <FuturisticLoader />;
-
   if (errorMsg) return <p>{errorMsg}</p>;
 
   return (
-   <>
     <section className="bg-[#0f172a] py-20 border-t border-cyan-400/10 min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-white mb-4 tracking-tight">
-          Usluge koje nudimo
+          Naši Pokloni
         </h2>
         <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto text-lg">
-          Istražite našu ponudu kvalitetnih usluga.
+          Istražite proizvode koje poklanjamo.
         </p>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <Link key={product.id} href={`/detaljiUsluge/${product.id}`}>
+            <Link key={product.id} href={`/detaljiPoklanjam/${product.id}`}>
               <div className="bg-[#1e293b] rounded-2xl shadow-lg hover:shadow-cyan-500/20 hover:ring-1 hover:ring-cyan-400/30 transition duration-300 overflow-hidden cursor-pointer">
                 <div className="flex justify-center items-center p-4">
-                
-                  {product.image_url ? (
-  <Image
-    width={500}
-    height={300}
-    src={product.image_url}
-    alt={product.title}
-    className="rounded-xl object-cover object-center shadow-md w-full h-[200px]"
-  />
-) : (
-  <div className="w-full h-[200px] bg-gray-700 flex items-center justify-center text-white text-sm rounded-xl">
-    Nema slike
-  </div>
-)}
-
+                  <Image
+                    width={500}
+                    height={300}
+                    src={product.image_url}
+                    alt={product.title}
+                    className="rounded-xl object-cover object-center shadow-md w-full h-[200px]"
+                  />
                 </div>
 
                 <div className="p-6 space-y-3">
@@ -69,7 +52,5 @@ export default function ClientUsluge({ products }) {
         </div>
       </div>
     </section>
-   
-   </>
   );
 }

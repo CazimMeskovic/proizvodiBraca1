@@ -1,4 +1,4 @@
-
+/* 
 
 
 'use client';
@@ -30,7 +30,6 @@ export default function PrikazPage() {
     fetchProducts();
   }, []);
 
- /*  if (loading) return <p className="text-white p-4">Učitavanje...</p>; */
  if (loading) return <FuturisticLoader />;
 
   if (errorMsg) return <p className="text-red-400 p-4">{errorMsg}</p>;
@@ -73,6 +72,28 @@ export default function PrikazPage() {
           ))}
         </div>
       </div>
+    </section>
+  );
+} */
+
+  // app/prikaz/page.tsx
+
+ // app/prikaz/page.tsx
+import { getProducts } from './ServerProducts';
+import ClientProducts from './ClientProducts';
+
+export const revalidate = 10; // Ovdje stavljaš revalidate za ISR
+
+export default async function PrikazPage() {
+  const products = await getProducts();
+
+  return (
+    <section >
+      
+
+        {/* Prikazivanje proizvoda putem klijentske komponente */}
+        <ClientProducts products={products} />
+     
     </section>
   );
 }

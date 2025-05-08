@@ -1,4 +1,4 @@
-'use client';
+/* 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -63,13 +63,35 @@ export default function PoklanjamPage() {
                     <p className="text-gray-400 text-sm mt-2">Grad: {product.grad}</p>
                     {product.description}
                   </p>
-                  {/* Dodavanje prikaza grada */}
                 </div>
               </div>
             </Link>
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+ */
+
+// app/poklanjam/page.tsx
+
+// app/poklanjam/page.tsx
+import { getPoklanjamProducts } from './ServerPoklanjam';
+import ClientPoklanjam from './ClientPoklanjam';
+
+export const revalidate = 10; // Postavi revalidate interval za ISR
+
+export default async function PoklanjamPage() {
+  const products = await getPoklanjamProducts();
+
+  return (
+    <section >
+      
+
+        {/* Prikazivanje proizvoda kroz klijentsku komponentu */}
+        <ClientPoklanjam products={products} />
+    
     </section>
   );
 }
