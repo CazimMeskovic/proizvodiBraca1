@@ -70,7 +70,7 @@ export default function HomePage() {
           transition={{ duration: 1 }}
           className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center"
         >
-          {[ 
+          {[
             { title: "Bez naporne registracije", text: "Brzo i lako počnite promovirati svoje proizvode." },
             { title: "Povezivanje sa Zajednicom", text: "Otkrijte nove kupce i partnere unutar muslimanske zajednice." },
             { title: "Sigurnost i Povjerenje", text: "Platforma koja nudi sigurno okruženje za trgovinu i poslovanje." },
@@ -93,7 +93,7 @@ export default function HomePage() {
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-purple-400">Naše kategorije</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[ 
+            {[
               { name: "Proizvodi ", desc: "Razni proizvodi: Namještaj, aparati, dekoracija i sve što vam treba za vaš dom." },
               { name: "Usluge", desc: "Razne usluge: Web okruzenje, Građevina, Automehaničarske i druge usluge" },
               { name: "Pokloni", desc: "Ako ne želite nešto prodati nego želite da to poklonite nekom bratu ili sestri muslimanki možete to uraditi u rubrici Pokloni." },
@@ -109,27 +109,27 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <section className="py-20 bg-black px-6">
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="max-w-4xl mx-auto text-center"
-  >
-    <h2 className="text-4xl font-bold mb-8 text-blue-400">Naša misija je</h2>
-    <div className="space-y-8">
-      {[ 
-        { quote: "Povezivanje muslimana i omogućavanje im da promoviraju svoje proizvode i usluge unutar zajednice.", author: "" },
-        { quote: "Ova platforma je odlična prilika za rast i širenje poslovanja među muslimanima širom regije.", author: "" }
-      ].map(({ quote, author }, idx) => (
-        <blockquote key={idx} className="bg-gray-900 p-6 rounded-xl border-l-4 border-blue-500">
-          <p className="text-gray-300 italic">“{quote}”</p>
-        {/*   <footer className="mt-4 text-gray-500"> {author}</footer> */}
-        </blockquote>
-      ))}
-    </div>
-  </motion.div>
-</section>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <h2 className="text-4xl font-bold mb-8 text-blue-400">Naša misija je</h2>
+          <div className="space-y-8">
+            {[
+              { quote: "Povezivanje muslimana i omogućavanje im da promoviraju svoje proizvode i usluge unutar zajednice.", author: "" },
+              { quote: "Ova platforma je odlična prilika za rast i širenje poslovanja među muslimanima širom regije.", author: "" }
+            ].map(({ quote, author }, idx) => (
+              <blockquote key={idx} className="bg-gray-900 p-6 rounded-xl border-l-4 border-blue-500">
+                <p className="text-gray-300 italic">“{quote}”</p>
+                {/*   <footer className="mt-4 text-gray-500"> {author}</footer> */}
+              </blockquote>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
 
       {/* CTA Section */}
@@ -141,9 +141,9 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl font-bold mb-4 text-purple-400">Zainteresovani za saradnju?</h2>
+          <h2 className="text-4xl font-bold mb-4 text-purple-400">Primijetili ste poteškoće u radu platforme?</h2>
           <p className="text-lg text-gray-300 mb-6">
-            Podržite našu zajedničku platformu, ukoliko imate dodatnih pitanja uvijek nas možete kontaktirati.
+            Podržite naš zajednički rad – ukoliko nešto ne funkcioniše kako treba, slobodno nas kontaktirajte.
           </p>
           <a href="/contact" className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg">Kontaktiraj nas</a>
         </motion.div>

@@ -168,10 +168,10 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   /*  if (!captchaToken) {
-      alert('Molimo vas da potvrditi da niste robot.');
-      return;
-    } */
+    /*  if (!captchaToken) {
+       alert('Molimo vas da potvrditi da niste robot.');
+       return;
+     } */
 
     setStatus('loading');
 
@@ -206,9 +206,10 @@ export default function ContactSection() {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">
+        <h2 className="text-3xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">
           Kontaktirajte nas
         </h2>
+        <h5 className=" font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500" >Ukoliko nešto ne funkcioniše kako treba, slobodno nas kontaktirajte.</h5>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Input Fields */}
@@ -241,7 +242,7 @@ export default function ContactSection() {
             value={formData.company}
             onChange={handleChange}
           />
-          
+
           <textarea
             name="message"
             required
@@ -264,7 +265,7 @@ export default function ContactSection() {
           />
 
           {/* reCAPTCHA */}
-        {/*   <ReCAPTCHA
+          {/*   <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
             onChange={(token) => setCaptchaToken(token)}
             className="my-4"
@@ -293,10 +294,10 @@ export default function ContactSection() {
           <p>
             Email:{' '}
             <a href="mailto:adism72@bih.net.ba" className="underline text-yellow-500">
-            meskovic0007@gmail.com
+              meskovic0007@gmail.com
             </a>
           </p>
-         {/*  <p className="mt-2">Telefon: 037 306-177</p> */}
+          {/*  <p className="mt-2">Telefon: 037 306-177</p> */}
           <p className="mt-2">Radno vrijeme: Non-Stop</p>
         </div>
       </div>
