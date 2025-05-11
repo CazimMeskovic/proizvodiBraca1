@@ -24,13 +24,16 @@ export default function RootLayout({ children }) {
  */
 
 // app/layout.js
+"use client";
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './globals.css';
+import { supabase } from '@/utils/supabase/client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-
-
-export const metadata = {
+/* export const metadata = {
   title: "Ahi – Platforma za Promociju Proizvoda i Usluga",
   description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte svoje proizvode i širite svoju ponudu u muslimanskoj zajednici.",
   keywords: ["muslimani", "proizvodi", "usluge", "promocija", "muslimanska zajednica"],
@@ -55,8 +58,21 @@ export const metadata = {
     description: "Pronađite proizvode i usluge koje nudi naša braća, promovirajte ih i širimo zajednicu.",
     images: ["https://www.bratski-proizvodi.vercel.app/images/muslim.jpg"]
   }
-};
+}; */
 export default function RootLayout({ children }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (window.location.hash.includes('access_token')) {
+      router.push(`/auth${window.location.hash}`);
+    }
+  }, [router]);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push('/auth');
+  };
+
   return (
     <html lang="en">
       <head>
@@ -67,11 +83,16 @@ export default function RootLayout({ children }) {
         ></script> */}
       </head>
       <body>
-       
+        {/* Supabase client is initialized globally */}
         <Header />
+        <button
+          onClick={handleLogout}
+          className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded"
+        >
+          Odjava
+        </button>
         <main>{children}</main>
         <Footer />
-       
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { supabase } from '@/utils/supabase/client';
 /* import FuturisticLoader from '../components/FuturisticLoader'; */
 
 
@@ -28,6 +29,17 @@ function FuturisticLoader1() {
 export default function ObjaviPage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        router.push('/auth');
+      }
+    };
+
+    checkUser();
+  }, [router]);
 
   const handleRedirect = (path) => {
     setLoading(true);

@@ -1,8 +1,8 @@
-
-
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import imageCompression from 'browser-image-compression'; // Dodaj ovu liniju za kompresiju slika
+import { supabase } from '@/utils/supabase/client';
+import { useRouter } from 'next/navigation';
 
 export default function DodajPage() {
   const [title, setTitle] = useState('');
@@ -12,6 +12,19 @@ export default function DodajPage() {
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        router.push('/auth');
+      }
+    };
+
+    checkAuth();
+  }, [router]);
 
   // Dodaj funkciju za promenu slike
   const handleImageChange = async (e) => {
