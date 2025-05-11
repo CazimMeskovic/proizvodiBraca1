@@ -291,12 +291,12 @@ export default function ContactSection() {
 
         {/* Kontakt Informacije */}
         <div className="mt-12 text-center text-sm text-gray-300">
-          <p>
+         {/*  <p>
             Email:{' '}
             <a href="mailto:adism72@bih.net.ba" className="underline text-yellow-500">
               meskovic0007@gmail.com
             </a>
-          </p>
+          </p> */}
           {/*  <p className="mt-2">Telefon: 037 306-177</p> */}
           <p className="mt-2">Radno vrijeme: Non-Stop</p>
         </div>
