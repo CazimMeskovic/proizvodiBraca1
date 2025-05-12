@@ -1,5 +1,5 @@
 // 4. app/novi-oglas/page.tsx - forma za novi oglas
-import AdForm from "@/components/AdForm";
+import AdForm from "../components/AdForm";
 export default function NewAdPage() {
     return (
         <div>

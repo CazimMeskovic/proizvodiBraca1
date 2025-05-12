@@ -6,15 +6,24 @@ export default function AdForm() {
     const [form, setForm] = useState({ title: "", description: "", price: "" });
     const router = useRouter();
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        await fetch("/api/ads", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(form),
-        });
+    e.preventDefault();
+    console.log("Slanje podataka:", form);
+    const res = await fetch("/api/ads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
         router.push("/");
-    };
+    } else {
+        const errorData = await res.json();
+        console.error("Greška:", errorData);
+    }
+};
+
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
             <input name="title" placeholder="Naslov" className="input" onChange={handleChange} />

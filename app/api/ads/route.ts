@@ -1,12 +1,33 @@
-// 8. app/api/ads/route.ts (GET, POST)
-import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+
+/* import { supabase } from "../../../lib/supabase"; */
+
+import { NextRequest, NextResponse } from "next/server";
+/* import { createClient } from "@/utils/supabase/server"; */
+import { createClient } from "../../utils/supabase/server";
+
+export async function POST(request: NextRequest) {
+  const supabase = createClient();
+  const body = await request.json();
+
+  const { data, error } = await supabase.from("ads").insert([body]).select();
+
+  if (error) {
+    console.error("Greška pri upisu u Supabase:", error.message);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json(data);
+}
+
 export async function GET() {
-    const { data } = await supabase.from("ads").select("*").order("created_at", { ascending: false });
-    return NextResponse.json(data);
+  const supabase = createClient();
+  const { data, error } = await supabase.from("ads").select();
+
+  if (error) {
+    console.error("Greška pri čitanju iz baze:", error.message);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json(data);
 }
-export async function POST(req) {
-    const body = await req.json();
-    const { data } = await supabase.from("ads").insert([body]).select();
-    return NextResponse.json(data);
-}
+

@@ -6,7 +6,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function AdList() {
     const { data, error } = useSWR("/api/ads", fetcher);
     if (error) return <div>Greška...</div>;
-    if (!data) return <div>Učitavanje...</div>;
+    if (!data) return <div>Učitavanje...</div>; 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {data.map((ad) => (

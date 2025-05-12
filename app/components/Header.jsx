@@ -222,12 +222,11 @@ import logo from "../images/mesan1.png"
 
 const navLinks = [
   { href: '/', label: 'Početna' },
-  { href: '/prikaz', label: 'Proizvodi' },
-  { href: '/usluge', label: 'Usluge' },
+  { href: '/novi-oglas', label: 'novi-oglas' },
+ /*  { href: '/usluge', label: 'Usluge' },
   { href: '/poklanjam', label: 'Poklanjam' },
   { href: '/objavi', label: 'Objavi' },
- /*  { href: '/whitepaper', label: 'Gdje smo' }, */
-  { href: '/contact', label: 'Kontakt' },
+  { href: '/contact', label: 'Kontakt' }, */
 ];
 /* const navLinks = [
   { href: '/', label: 'Home' },
