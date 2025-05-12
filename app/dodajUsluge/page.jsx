@@ -1,4 +1,4 @@
-
+/* 
 'use client';
 import { useState } from 'react';
 import imageCompression from 'browser-image-compression'; // Dodaj ovu liniju za kompresiju slika
@@ -142,3 +142,4 @@ export default function DodajPage() {
     </div>
   );
 }
+ */
