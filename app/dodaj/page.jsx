@@ -1,4 +1,4 @@
-
+/* 
 
 'use client';
 import { useState } from 'react';
@@ -140,4 +140,23 @@ export default function DodajPage() {
       </div>
     </div>
   );
+}
+ */
+
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import DodajForm from './DodajForm'
+
+export default async function DodajPage() {
+  const supabase = createServerComponentClient({ cookies })
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) {
+    redirect('/login')
+  }
+
+  return <DodajForm userId={user.id} />
 }
