@@ -55,7 +55,7 @@ export default function DodajPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
+ /*  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setSuccessMsg('');
@@ -90,6 +90,55 @@ export default function DodajPage() {
       setLoading(false);
     }
   };
+ */
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setSuccessMsg('');
+  setErrorMsg('');
+
+  const { data: { session }, error } = await supabase.auth.getSession();
+
+  if (error || !session) {
+    setErrorMsg('Niste prijavljeni.');
+    setLoading(false);
+    return;
+  }
+
+  const userId = session.user.id;
+
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('description', description);
+  formData.append('grad', grad);
+  formData.append('image', image);
+  formData.append('user_id', userId); // ⬅️ Dodaj user_id
+
+  try {
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Greška pri uploadu');
+    }
+
+    setSuccessMsg(data.message);
+    setTitle('');
+    setDescription('');
+    setGrad('');
+    setImage(null);
+  } catch (err) {
+    setErrorMsg(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-8">

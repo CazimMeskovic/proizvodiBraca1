@@ -67,8 +67,8 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#0f172a]/90 to-[#1e293b]/90 backdrop-blur border-b border-cyan-400/10 shadow-xl">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <header className="fixed  top-0 w-full z-50 bg-gradient-to-r from-[#0f172a]/90 to-[#1e293b]/90 backdrop-blur border-b border-cyan-400/10 shadow-xl">
+      <div className="max-w-7xl  mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <motion.div whileHover={{ scale: 1.05 }} transition={{ type: 'spring', stiffness: 300 }}>
           
             <Link
@@ -87,12 +87,12 @@ export default function Header() {
           
         </motion.div>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden  md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 ${
+              className={`text-red-500 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 ${
                 pathname === link.href ? 'font-semibold underline' : ''
               }`}
             >

@@ -1,116 +1,101 @@
-"use client";
+/* 
 
+
+'use client';
 import { useEffect, useState } from 'react';
-import { supabase } from '@/utils/supabase/client';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import FuturisticLoader from '../components/FuturisticLoader';
 
-export default function Dashboard() {
-  const [ads, setAds] = useState([]);
+
+export default function PrikazPage() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    const fetchAds = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-
-      if (!session) {
-        return;
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Greška pri dohvatu proizvoda');
+        setProducts(data);
+      } catch (err) {
+        setErrorMsg(err.message);
+      } finally {
+        setLoading(false);
       }
-
-      const { data, error } = await supabase
-        .from('ads')
-        .select('*')
-        .eq('user_id', session.user.id);
-
-      if (error) {
-        console.error('Error fetching ads:', error);
-      } else {
-        setAds(data);
-      }
-
-      setLoading(false);
     };
 
-    fetchAds();
+    fetchProducts();
   }, []);
 
-  const handleDelete = async (id) => {
-    const { error } = await supabase
-      .from('ads')
-      .delete()
-      .eq('id', id);
+ if (loading) return <FuturisticLoader />;
 
-    if (error) {
-      console.error('Error deleting ad:', error);
-    } else {
-      setAds(ads.filter((ad) => ad.id !== id));
-    }
-  };
-
-  const handleEdit = async (id) => {
-    const newTitle = prompt('Enter new title:');
-    const newDescription = prompt('Enter new description:');
-
-    if (!newTitle || !newDescription) {
-      alert('Title and description cannot be empty.');
-      return;
-    }
-
-    const { error } = await supabase
-      .from('ads')
-      .update({ title: newTitle, description: newDescription })
-      .eq('id', id);
-
-    if (error) {
-      console.error('Error updating ad:', error);
-    } else {
-      setAds(ads.map((ad) => (ad.id === id ? { ...ad, title: newTitle, description: newDescription } : ad)));
-    }
-  };
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  if (errorMsg) return <p className="text-red-400 p-4">{errorMsg}</p>;
 
   return (
-    <div className="max-w-4xl mx-auto mt-20 p-6 bg-gray-800 text-white rounded-lg">
-      <h1 className="text-2xl font-bold mb-6">Your Ads</h1>
+    <section className="bg-[#0f172a] py-20 border-t border-cyan-400/10 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-white mb-4 tracking-tight">
+          Naši Proizvodi
+        </h2>
+        <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto text-lg">
+          Istražite našu ponudu kvalitetnih proizvoda.
+        </p>
 
-      {ads.length === 0 ? (
-        <p>No ads found. Create one!</p>
-      ) : (
-        <ul className="space-y-4">
-          {ads.map((ad) => (
-            <li key={ad.id} className="p-4 bg-gray-700 rounded-lg">
-              <h2 className="text-xl font-bold">{ad.title}</h2>
-              <p>{ad.description}</p>
-              <div className="mt-4 flex space-x-4">
-                <button
-                  onClick={() => handleDelete(ad.id)}
-                  className="py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                >
-                  Delete
-                </button>
-                <button
-                  onClick={() => handleEdit(ad.id)}
-                  className="py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-                >
-                  Edit
-                </button>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => (
+            <Link key={product.id} href={`/detalji/${product.id}`}>
+              <div className="bg-[#1e293b] rounded-2xl shadow-lg hover:shadow-cyan-500/20 hover:ring-1 hover:ring-cyan-400/30 transition duration-300 overflow-hidden cursor-pointer">
+                <div className="flex justify-center items-center p-4">
+                  <Image
+                    width={500}
+                    height={300}
+                    src={product.image_url}
+                    alt={product.title}
+                    className="rounded-xl object-cover object-center shadow-md w-full h-[200px]"
+                  />
+                </div>
+
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold text-white">{product.title}</h3>
+                  <p
+                    className="text-gray-300 text-sm leading-relaxed line-clamp-3"
+                    title={product.description}
+                  >
+                    {product.description}
+                  </p>
+                </div>
               </div>
-            </li>
+            </Link>
           ))}
-        </ul>
-      )}
-
-      <div className="mt-6">
-        <button
-          onClick={() => router.push('/objavi')}
-          className="py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600"
-        >
-          Objavi
-        </button>
+        </div>
       </div>
-    </div>
+    </section>
+  );
+} */
+
+  // app/prikaz/page.tsx
+
+ // app/prikaz/page.tsx
+/* import { getProducts } from './ServerProducts'; */
+import { getProducts } from './ServerDasbord';
+/* import ClientProducts from './ClientProducts'; */
+import DashboardClient from './dashboardClient';
+
+export const revalidate = 10; // Ovdje stavljaš revalidate za ISR
+
+export default async function PrikazPage() {
+  const products = await getProducts();
+
+  return (
+    <section >
+      
+
+        {/* Prikazivanje proizvoda putem klijentske komponente */}
+        <DashboardClient products={products} />
+     
+    </section>
   );
 }
