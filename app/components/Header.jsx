@@ -7,7 +7,8 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import logo from "../images/mesan1.png"
-import { supabase } from '@/utils/supabase/client';
+/* import { supabase } from '@/utils/supabase/client'; */
+import {supabase} from "../utils/supabase/client"
 
 const navLinks = [
   { href: '/', label: 'Početna' },

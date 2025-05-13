@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import imageCompression from 'browser-image-compression'; // Dodaj ovu liniju za kompresiju slika
-import { supabase } from '@/utils/supabase/client';
+import { supabase } from '../utils/supabase/client';
 import { useRouter } from 'next/navigation';
 
 export default function DodajPage() {
@@ -55,42 +55,6 @@ export default function DodajPage() {
     }
   };
 
- /*  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setSuccessMsg('');
-    setErrorMsg('');
-
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('grad', grad); // Dodaj grad u formu
-    formData.append('image', image);
-
-    try {
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || 'Greška pri uploadu');
-      }
-
-      setSuccessMsg(data.message);
-      setTitle('');
-      setDescription('');
-      setGrad('');
-      setImage(null);
-    } catch (err) {
-      setErrorMsg(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
- */
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -98,32 +62,59 @@ export default function DodajPage() {
   setSuccessMsg('');
   setErrorMsg('');
 
-  const { data: { session }, error } = await supabase.auth.getSession();
+  /*  const { data: { session }, error } = await supabase.auth.getSession(); */
+const {
+  data: { session },
+  error,
+} = await supabase.auth.getSession();
 
-  if (error || !session) {
+ /*  if (error || !session) {
     setErrorMsg('Niste prijavljeni.');
     setLoading(false);
     return;
   }
+ */
+if (error || !session) {
+  setErrorMsg('Niste prijavljeni.');
+  setLoading(false);
+  return;
+}
+ /*  const userId = session.user.id; */
+ const access_token = session.access_token;
+  
 
-  const userId = session.user.id;
 
-  const formData = new FormData();
+  /* const formData = new FormData();
   formData.append('title', title);
   formData.append('description', description);
   formData.append('grad', grad);
   formData.append('image', image);
-  formData.append('user_id', userId); // ⬅️ Dodaj user_id
+  formData.append('user_id', userId); // ⬅️ Dodaj user_id */
+  const formData = new FormData();
+formData.append('title', title);
+formData.append('description', description);
+formData.append('grad', grad);
+formData.append('image', image);
 
-  try {
+  /* try {
     const res = await fetch('/api/upload', {
       method: 'POST',
       body: formData,
     });
+ */
+try {
+  const res = await fetch('/api/upload', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+    body: formData,
+  });
 
-    const data = await res.json();
+  /*   const data = await res.json(); */
+   const data = await res.json();
 
-    if (!res.ok) {
+   /*  if (!res.ok) {
       throw new Error(data.error || 'Greška pri uploadu');
     }
 
@@ -136,7 +127,20 @@ export default function DodajPage() {
     setErrorMsg(err.message);
   } finally {
     setLoading(false);
-  }
+  } */
+   if (!res.ok) throw new Error(data.error || 'Greška pri uploadu');
+
+  setSuccessMsg(data.message);
+  setTitle('');
+  setDescription('');
+  setGrad('');
+  setImage(null);
+} catch (err) {
+  setErrorMsg(err.message);
+} finally {
+  setLoading(false);
+}
+
 };
 
 
