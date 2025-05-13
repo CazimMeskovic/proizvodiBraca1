@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/utils/supabase/client';
+import { supabase } from '../utils/supabase/client';
 import Image from 'next/image';
 
 export default function DashboardClient() {
